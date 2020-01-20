@@ -15,7 +15,7 @@ RUN chmod -R u+x ${APP_ROOT} && \
     chgrp -R 0 ${APP_ROOT} && \
     chgrp -R 0 /.m2/repository && \
     chmod -R g=u ${APP_ROOT} /etc/passwd
-
+ENV HOME=/opt/app-root/src
 ADD uid_entrypoint /usr/bin
 WORKDIR ${APP_ROOT}
 USER 1001

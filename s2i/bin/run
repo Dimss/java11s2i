@@ -1,0 +1,2 @@
+#!/bin/bash
+echo "Override the assemble file with your own .s2i/bin/run"

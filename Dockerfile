@@ -11,7 +11,7 @@ RUN yum module install -y container-tools
 RUN chmod -R u+x ${APP_ROOT} && \
     chgrp -R 0 ${APP_ROOT} && \
     chmod -R g=u ${APP_ROOT} /etc/passwd
-
+ADD uid_entrypoint /usr/bin
 USER 1001
 ENTRYPOINT [ "uid_entrypoint" ]
 CMD ["/usr/libexec/s2i/usage"]

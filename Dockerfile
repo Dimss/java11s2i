@@ -3,7 +3,7 @@ LABEL io.openshift.s2i.scripts-url="image:///usr/libexec/s2i"
 
 ENV APP_ROOT=/opt/app-root/src
 
-RUN mkdir -p {APP_ROOT}
+RUN mkdir -p ${APP_ROOT}
 COPY ./s2i/bin/ /usr/libexec/s2i
 RUN yum install -y java-11-openjdk.x86_64 java-11-openjdk-devel.x86_64 maven
 ADD s2i-bin /usr/local/bin/s2i

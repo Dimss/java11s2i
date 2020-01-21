@@ -11,7 +11,8 @@ RUN yum module install -y container-tools
 RUN mkdir -p ${APP_ROOT}/.m2/repository
 
 RUN chmod -R u+x ${APP_ROOT} && \
-    chgrp -R 0 ${APP_ROOT} && \
+    chgrp -R 1001 ${APP_ROOT} && \
+    chown -R 1001:1001 ${APP_ROOT} && \
     chmod -R g=u ${APP_ROOT} /etc/passwd
 ENV HOME=/opt/app-root/src
 ADD uid_entrypoint /usr/bin

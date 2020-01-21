@@ -14,6 +14,8 @@ RUN chmod -R u+x ${APP_ROOT} && \
     chgrp -R 1001 ${APP_ROOT} && \
     chown -R 1001:1001 ${APP_ROOT} && \
     chmod -R g=u ${APP_ROOT} /etc/passwd
+
+RUN chown -R 1001:1001 ${APP_ROOT}
 ENV HOME=/opt/app-root/src
 ADD uid_entrypoint /usr/bin
 ADD settings.xml /usr/share/maven/conf

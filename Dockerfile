@@ -10,6 +10,8 @@ ADD s2i-bin /usr/local/bin/s2i
 RUN yum module install -y container-tools
 RUN mkdir -p ${APP_ROOT}/.m2/repository
 
+RUN yum -y install shadow-utils
+
 RUN chmod -R u+x ${APP_ROOT} && \
     chgrp -R 1001 ${APP_ROOT} && \
     chown -R 1001:1001 ${APP_ROOT} && \

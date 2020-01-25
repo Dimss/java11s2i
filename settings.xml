@@ -185,7 +185,7 @@ under the License.
             <properties>
                 <!-- Optional URL to server. Default value is http://localhost:9000 -->
                 <sonar.host.url>
-                    http://sonarqube:9000
+                    http://sonarqube:80
                 </sonar.host.url>
             </properties>
         </profile>
